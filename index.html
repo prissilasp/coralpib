@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coral - Soprano - Player</title>
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-    body { text-align: center; font-family: sans-serif; padding: 20px 10px; background: linear-gradient(135deg, #161214, #261a1f); color: #f5f5f5; min-height: 100vh; box-sizing: border-box; }
+    html {
+      min-height: 100%;
+      background: linear-gradient(135deg, #1f171a, #2c1d22);
+    }
+    body { 
+      text-align: center; 
+      font-family: sans-serif; 
+      margin: 0;
+      padding: 20px 10px; 
+      background: transparent; 
+      color: #f5f5f5; 
+      min-height: 100vh; 
+      box-sizing: border-box; 
+    }
     h2 { color: #c5a059; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-size: 1.5rem; letter-spacing: 0.5px; margin-bottom: 2px; }
     .subtitle { color: #c5a059; font-size: 1.1rem; font-weight: bold; margin-top: 0; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
     .author { color: #c5a059; font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
@@ -20,7 +32,7 @@
 </head>
 <body>
   <h2>Coral - Soprano</h2>
-  <div class="subtitle">(Player Online)</div>
+  <div class="subtitle">Player Online</div>
   <div class="author">by PRISSÍLA</div>
   <audio id="player" controls></audio>
   
@@ -31,15 +43,15 @@
     const playlistElement = document.getElementById('playlist');
     
     const tracks = [
-      { name: '1 - Celebrai Nasceu Jesus Cristo', file: '1 - Celebrai Nasceu Jesus Cristo.mp3' },
-      { name: '2 - Noite de Natal', file: '2 - Noite de Natal.mp3' },
-      { name: '3 - Tempo de Natal (Ouçam os sinos)', file: '3 - Tempo de Natal (Oucam os sinos).mp3' },
-      { name: '4 - Ouço anjos a cantar Medley', file: '4 - Ouco anjos a cantar Medley.mp3' },
-      { name: '5 - O Natal é Cristo', file: '5 - O Natal e Cristo.mp3' },
-      { name: '6 - Seguindo a Luz', file: '6 - Seguindo a Luz.mp3' },
-      { name: '7 - Ao Rei Eterno demos Glória', file: '7 - Ao Rei Eterno demos Gloria.mp3' },
-      { name: '8 - Da próxima vez', file: '8 - Da proxima vez.mp3' },
-      { name: '9 - Messias Medley', file: '9 - Messias Medley.mp3' }
+      { name: '1 - Celebrai Nasceu Jesus Cristo', file: '1  - Celebrai Nasceu Jesus Cristo.mp3' },
+      { name: '2 - Noite de Natal', file: '2  - Noite de Natal.mp3' },
+      { name: '3 - Tempo de Natal (Ouçam os sinos)', file: '3  - Tempo de Natal (Oucam os sinos).mp3' },
+      { name: '4 - Ouço anjos a cantar Medley', file: '4  - Ouco anjos a cantar Medley.mp3' },
+      { name: '5 - O Natal é Cristo', file: '5  - O Natal e Cristo.mp3' },
+      { name: '6 - Seguindo a Luz', file: '6  - Seguindo a Luz.mp3' },
+      { name: '7 - Ao Rei Eterno demos Glória', file: '7  - Ao Rei Eterno demos Gloria.mp3' },
+      { name: '8 - Da próxima vez', file: '8  - Da proxima vez.mp3' },
+      { name: '9 - Messias Medley', file: '9  - Messias Medley.mp3' }
     ];
     
     let currentTrack = 0;
