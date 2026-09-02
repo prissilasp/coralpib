@@ -7,7 +7,6 @@
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
     body { text-align: center; font-family: sans-serif; padding: 20px 10px; background: linear-gradient(135deg, #161214, #261a1f); color: #f5f5f5; min-height: 100vh; box-sizing: border-box; }
-    /* Título com dourado ajustado para menos amarelo (mais bronze/ouro velho) */
     h2 { color: #c5a059; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-size: 1.5rem; letter-spacing: 0.5px; }
     ul { list-style: none; padding: 0; width: 100%; max-width: 450px; margin: 20px auto; text-align: left; background: #221a1d; border: 1px solid #4a1525; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.6); overflow: hidden; box-sizing: border-box; }
     li { padding: 14px 16px; border-bottom: 1px solid #361720; cursor: pointer; transition: all 0.2s; color: #e0d0d4; font-size: 0.95rem; }
@@ -27,35 +26,24 @@
     const audio = document.getElementById('player');
     const playlistElement = document.getElementById('playlist');
     
-    const files = [
-      '1 - Celebrai Nasceu Jesus Cristo.mp3',
-      '2 - Noite de Natal.mp3',
-      '3 - Tempo de Natal (Oucam os sinos).mp3',
-      '4 - Ouco anjos a cantar Medley.mp3',
-      '5 - O Natal e Cristo.mp3',
-      '6 - Seguindo a Luz.mp3',
-      '7 - Ao Rei Eterno demos Gloria.mp3',
-      '8 - Da proxima vez.mp3',
-      '9 - Messias Medley.mp3'
-    ];
-
-    const displayNames = [
-      '1 - Celebrai Nasceu Jesus Cristo',
-      '2 - Noite de Natal',
-      '3 - Tempo de Natal (Ouçam os sinos)',
-      '4 - Ouço anjos a cantar Medley',
-      '5 - O Natal é Cristo',
-      '6 - Seguindo a Luz',
-      '7 - Ao Rei Eterno demos Glória',
-      '8 - Da próxima vez',
-      '9 - Messias Medley'
+    // Lista unificada garantindo que o link do arquivo aponte exatamente para o nome limpo correspondente
+    const tracks = [
+      { name: '1 - Celebrai Nasceu Jesus Cristo', file: '1 - Celebrai Nasceu Jesus Cristo.mp3' },
+      { name: '2 - Noite de Natal', file: '2 - Noite de Natal.mp3' },
+      { name: '3 - Tempo de Natal (Ouçam os sinos)', file: '3 - Tempo de Natal (Oucam os sinos).mp3' },
+      { name: '4 - Ouço anjos a cantar Medley', file: '4 - Ouco anjos a cantar Medley.mp3' },
+      { name: '5 - O Natal é Cristo', file: '5 - O Natal e Cristo.mp3' },
+      { name: '6 - Seguindo a Luz', file: '6 - Seguindo a Luz.mp3' },
+      { name: '7 - Ao Rei Eterno demos Glória', file: '7 - Ao Rei Eterno demos Gloria.mp3' },
+      { name: '8 - Da próxima vez', file: '8 - Da proxima vez.mp3' },
+      { name: '9 - Messias Medley', file: '9 - Messias Medley.mp3' }
     ];
     
     let currentTrack = 0;
 
     function loadTrack(index, playIt = true) {
       currentTrack = index;
-      audio.src = files[currentTrack];
+      audio.src = tracks[currentTrack].file;
       updateActiveItem();
       if (playIt) {
         audio.play().catch(e => console.log("Aguardando clique do usuário"));
@@ -73,15 +61,15 @@
       });
     }
 
-    displayNames.forEach((name, index) => {
+    tracks.forEach((track, index) => {
       const li = document.createElement('li');
-      li.textContent = name;
+      li.textContent = track.name;
       li.onclick = () => loadTrack(index, true);
       playlistElement.appendChild(li);
     });
 
     audio.addEventListener('ended', () => {
-      currentTrack = (currentTrack + 1) % files.length;
+      currentTrack = (currentTrack + 1) % tracks.length;
       loadTrack(currentTrack, true);
     });
 
