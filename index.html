@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coral - Soprano - Player</title>
   <style>
-    /* Fundo degradê antigo da direita */
     html {
       min-height: 100%;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
@@ -20,17 +19,15 @@
       min-height: 100vh; 
       box-sizing: border-box; 
     }
-    /* Estilo do título da esquerda (fonte amarelada/dourada e elegante) */
-    h2 { color: #ffeb3b; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 1.5rem; letter-spacing: 0.5px; margin-bottom: 2px; }
-    .subtitle { color: #ffeb3b; font-size: 1.1rem; font-weight: bold; margin-top: 0; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-    .author { color: #ffeb3b; font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.3); opacity: 0.9; }
+    h2 { color: #c5a059; text-shadow: 0 2px 4px rgba(0,0,0,0.4); font-size: 1.5rem; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .subtitle { color: #c5a059; font-size: 1.1rem; font-weight: bold; margin-top: 0; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+    .author { color: #c5a059; font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
     
-    /* Caixa da playlist em tom bordô */
     ul { list-style: none; padding: 0; width: 100%; max-width: 450px; margin: 20px auto; text-align: left; background: #221a1d; border: 1px solid #4a1525; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.6); overflow: hidden; box-sizing: border-box; }
     li { padding: 14px 16px; border-bottom: 1px solid #361720; cursor: pointer; transition: all 0.2s; color: #e0d0d4; font-size: 0.95rem; }
     li:last-child { border-bottom: none; }
     li:hover { background: #3b1622; color: #ffffff; }
-    li.active { background: #5c182d; font-weight: bold; color: #fff; border-left: 6px solid #ffeb3b; }
+    li.active { background: #5c182d; font-weight: bold; color: #fff; border-left: 6px solid #c5a059; }
     audio { width: 100%; max-width: 450px; margin-top: 10px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
   </style>
 </head>
@@ -46,15 +43,16 @@
     const audio = document.getElementById('player');
     const playlistElement = document.getElementById('playlist');
     
+    // Nomes rigorosamente iguais aos da sua imagem de arquivos
     const files = [
       '1 - Celebrai Nasceu Jesus Cristo.mp3',
       '2 - Noite de Natal.mp3',
       '3 - Tempo de Natal (Oucam os sinos).mp3',
-      '4 - Ouco anjos a cantar Medley.mp3',
+      '4 - Ouco Anjos a Cantar Medley.mp3',
       '5 - O Natal e Cristo.mp3',
       '6 - Seguindo a Luz.mp3',
       '7 - Ao Rei Eterno demos Gloria.mp3',
-      '8 - Da proxima vez.mp3',
+      '8 - Da Proxima Vez.mp3',
       '9 - Messias Medley.mp3'
     ];
 
@@ -62,11 +60,11 @@
       '1 - Celebrai Nasceu Jesus Cristo',
       '2 - Noite de Natal',
       '3 - Tempo de Natal (Ouçam os sinos)',
-      '4 - Ouço anjos a cantar Medley',
+      '4 - Ouço Anjos a Cantar Medley',
       '5 - O Natal é Cristo',
       '6 - Seguindo a Luz',
       '7 - Ao Rei Eterno demos Glória',
-      '8 - Da próxima vez',
+      '8 - Da Próxima Vez',
       '9 - Messias Medley'
     ];
     
