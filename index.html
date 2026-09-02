@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coral - Soprano - Player</title>
   <style>
+    /* Fundo degradê antigo da direita */
     html {
       min-height: 100%;
-      background: linear-gradient(135deg, #120d0f, #361421);
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
     }
     body { 
       text-align: center; 
@@ -19,14 +20,17 @@
       min-height: 100vh; 
       box-sizing: border-box; 
     }
-    h2 { color: #c5a059; text-shadow: 0 2px 4px rgba(0,0,0,0.6); font-size: 1.5rem; letter-spacing: 0.5px; margin-bottom: 2px; }
-    .subtitle { color: #c5a059; font-size: 1.1rem; font-weight: bold; margin-top: 0; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
-    .author { color: #c5a059; font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    /* Estilo do título da esquerda (fonte amarelada/dourada e elegante) */
+    h2 { color: #ffeb3b; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 1.5rem; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .subtitle { color: #ffeb3b; font-size: 1.1rem; font-weight: bold; margin-top: 0; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    .author { color: #ffeb3b; font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.3); opacity: 0.9; }
+    
+    /* Caixa da playlist em tom bordô */
     ul { list-style: none; padding: 0; width: 100%; max-width: 450px; margin: 20px auto; text-align: left; background: #221a1d; border: 1px solid #4a1525; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.6); overflow: hidden; box-sizing: border-box; }
     li { padding: 14px 16px; border-bottom: 1px solid #361720; cursor: pointer; transition: all 0.2s; color: #e0d0d4; font-size: 0.95rem; }
     li:last-child { border-bottom: none; }
     li:hover { background: #3b1622; color: #ffffff; }
-    li.active { background: #5c182d; font-weight: bold; color: #fff; border-left: 6px solid #c5a059; }
+    li.active { background: #5c182d; font-weight: bold; color: #fff; border-left: 6px solid #ffeb3b; }
     audio { width: 100%; max-width: 450px; margin-top: 10px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); }
   </style>
 </head>
@@ -42,7 +46,6 @@
     const audio = document.getElementById('player');
     const playlistElement = document.getElementById('playlist');
     
-    // Nomes com exatamente um espaço após o número, idênticos aos arquivos do GitHub
     const files = [
       '1 - Celebrai Nasceu Jesus Cristo.mp3',
       '2 - Noite de Natal.mp3',
