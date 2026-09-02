@@ -7,7 +7,8 @@
   <style>
     html {
       min-height: 100%;
-      background: linear-gradient(135deg, #1f171a, #2c1d22);
+      /* Degradê mais marcado: do preto chumbo indo para um tom bordô elegante */
+      background: linear-gradient(135deg, #120d0f, #361421);
     }
     body { 
       text-align: center; 
@@ -32,7 +33,7 @@
 </head>
 <body>
   <h2>Coral - Soprano</h2>
-  <div class="subtitle">(Player Online)</div>
+  <div class="subtitle">Player Online</div>
   <div class="author">by PRISSÍLA</div>
   <audio id="player" controls></audio>
   
@@ -42,7 +43,6 @@
     const audio = document.getElementById('player');
     const playlistElement = document.getElementById('playlist');
     
-    // Lista com os nomes exatos dos arquivos do GitHub (mantendo os espaços duplos que vimos)
     const files = [
       '1  - Celebrai Nasceu Jesus Cristo.mp3',
       '2  - Noite de Natal.mp3',
